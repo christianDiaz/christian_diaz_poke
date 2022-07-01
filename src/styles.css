@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  background-color: lightgray;
+  height: max-content;
+}
+
+.mainContainer {
+  background-color: gray;
+  height: 96vh;
+}
+
+.pokemonContainer {
+  margin: 10px;
+  padding-top: 10px;
+}
+
+.titleContainer {
+  text-align: center;
+}
+
+.searchContainer {
+  display: flex;
+  margin: 20px 0;
+}
+
+.searchBox {
+  width: 25%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  outline: none;
+  color: #2c3632;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+}
+
+.searchBox:hover,
+.searchBox:focus {
+  border: 2px solid #000000;
+}
+
+.previewContainer {
+  display: flex;
+  width: 100%;
+}
+
+.cardsContainer {
+  border: 2px solid blueviolet;
+  display: flex;
+  height: 75vh;
+}
+
+.pokemonList {
+  width: 60%;
+}
+
+.pokemonCard {
+  width: 40%;
+}
+
+.child {
+  flex: 1;
+  border: 2px solid blueviolet;
+  margin: 10px;
+}
+
+.child:first-child {
+  display: inline-block;
+  border: 1px solid red;
+}
