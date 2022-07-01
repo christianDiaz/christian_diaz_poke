@@ -3,10 +3,14 @@
     <h2>Listado de Pokemon</h2>
   </div>
   <div class="searchContainer">
-   <input  type="text" class="searchBox" placeholder="&#xf002; Buscar">
+    <input [(ngModel)]="searchValue"  type="text" class="searchBox" placeholder="&#xf002; Buscar" />
   </div>
   <div class="previewContainer">
-    <div class='pokemonList cardsContainer'>child 1</div>
-    <div class='pokemonCard cardsContainer'>child 2</div>
+    <div class="pokemonList cardsContainer">child 1</div>
+    <div class="pokemonCard cardsContainer">child 2</div>
+  </div>
+  <div class="buttonContainer">
+    <button class="btnPagination">Atras</button>
+    <button class="btnPagination">Siguiente</button>
   </div>
 </div>

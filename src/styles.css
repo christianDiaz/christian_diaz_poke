@@ -1,11 +1,11 @@
 html,
 body {
-  background-color: lightgray;
+  background-color: #fbfbfb;
   height: max-content;
 }
 
 .mainContainer {
-  background-color: gray;
+  /* background-color: gray; */
   height: 96vh;
 }
 
@@ -16,18 +16,20 @@ body {
 
 .titleContainer {
   text-align: center;
+  font-size: 1.3rem;
 }
 
 .searchContainer {
   display: flex;
   margin: 20px 0;
+  width: 59%;
 }
 
 .searchBox {
-  width: 25%;
+  width: 100%;
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #000000;
+  border: 1px solid #9b9b9be9;
   outline: none;
   color: #2c3632;
   font-family: FontAwesome;
@@ -42,29 +44,53 @@ body {
 .previewContainer {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
 .cardsContainer {
   border: 2px solid blueviolet;
   display: flex;
-  height: 75vh;
+  height: 70vh;
+  flex-flow: wrap;
 }
 
 .pokemonList {
-  width: 60%;
+  width: 59%;
 }
 
 .pokemonCard {
-  width: 40%;
+  width: 39%;
 }
 
-.child {
-  flex: 1;
-  border: 2px solid blueviolet;
-  margin: 10px;
+.buttonContainer {
+  margin: 20px 10px;
+  display: flex;
+  width: 58%;
+  /* border: 2px solid burlywood; */
+  justify-content: space-between;
 }
 
-.child:first-child {
-  display: inline-block;
-  border: 1px solid red;
+.btnPagination {
+  padding: 12px;
+  margin: 0 2px;
+  width: 100px;
+  background-color: #337ad6;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.24);
+}
+
+.btnPagination:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.24);
+  background-color: #317bdc;
+}
+
+.btnPagination:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 15px 1px rgba(0, 0, 0, 0.24);
 }
