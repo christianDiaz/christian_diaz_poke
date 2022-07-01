@@ -1,26 +1,41 @@
 import { PokemonService } from './../../../services/pokemon.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
   searchValue: String = '';
+  _serviceSubscription!: Subscription;
+  pokemonOffset: number = 0;
+  pokemonLimit: number = 4;
+  constructor(private pokemonService: PokemonService) {
+    console.log(this.pokemonOffset);
 
-  constructor(
-    private pokemonService: PokemonService,
-    private _serviceSubscription: Subscription
-  ) {}
+  }
 
-  ngOnInit(): void {}
+  onKeyUp() {
+    this.getPokemon();
+  }
+
+  onClickNextPage() {
+    this.pokemonOffset = this.pokemonOffset + 4;
+    console.log(this.pokemonOffset);
+
+  }
+
+  onClickPrevPage() {
+    this.pokemonOffset = this.pokemonOffset <= 4 ? 0 : this.pokemonOffset - 4;
+    console.log(this.pokemonOffset);
+  }
 
   getPokemon() {
     this._serviceSubscription = this.pokemonService
-      .getPokemon('asdsa')
+      .getPokemon('pikachu')
       .subscribe({
-        next: (v) => console.log,
+        next: (r) => console.log(r.body),
         error: (e) => console.log,
         complete: console.info,
       });

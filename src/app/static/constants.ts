@@ -3,5 +3,5 @@ export const URL = {
 };
 
 export const END_POINTS = {
-  pokemon: 'pokemon',
+  pokemon: 'pokemon/',
 };
