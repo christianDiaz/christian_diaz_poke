@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PokemonService } from '../../../services/pokemon.service';
 import { Subscription } from 'rxjs';
 import { Pokemon } from 'src/app/interfaces/pokemon';
@@ -9,8 +9,10 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
   styleUrls: ['./pokemon-simple-view.component.css'],
 })
 export class PokemonSimpleViewComponent implements OnInit {
-  @Input()
-  pokemonUrl: string = '';
+  @Input() pokemonUrl: string = '';
+
+  @Output() selectedPokemon = new EventEmitter<any>();
+
   _serviceSubscription!: Subscription;
   backgroundColor: String = '';
   pokemon!: Pokemon;
@@ -22,10 +24,7 @@ export class PokemonSimpleViewComponent implements OnInit {
     this._serviceSubscription = this.pokemonService
       .getPokemonData(this.pokemonUrl)
       .subscribe({
-        next: (r) => {
-          this.pokemon = this.toPokemon(r.body);
-          console.log(this.pokemon);
-        },
+        next: (r) => (this.pokemon = this.toPokemon(r.body)),
         error: (e) => console.log,
         complete: console.info,
       });
@@ -38,7 +37,7 @@ export class PokemonSimpleViewComponent implements OnInit {
       moves: this.populateMoves(pokemonData.moves),
       sprites: this.populateSprites(pokemonData.sprites),
       pokemonTypes: this.populateTypes(pokemonData.types),
-      weigth: pokemonData.weigth,
+      weight: pokemonData.weight,
       photo: pokemonData.sprites.other.home.front_default,
     };
   }
@@ -66,8 +65,8 @@ export class PokemonSimpleViewComponent implements OnInit {
     return types.map((t) => t.type.name);
   }
 
-  onClickPokemonCard(pokemon:Pokemon){
-    alert(pokemon.name)
+  onClickPokemonCard(pokemon: Pokemon) {
+    this.selectedPokemon.emit(pokemon);
   }
 
   getRandomColor(color: string = '#', letters: string = '0123456789ABCDEF') {
@@ -75,5 +74,9 @@ export class PokemonSimpleViewComponent implements OnInit {
       color += letters[Math.floor(Math.random() * 7)];
     }
     return color;
+  }
+
+  ngOnDestroy(): void {
+    this._serviceSubscription && this._serviceSubscription.unsubscribe();
   }
 }

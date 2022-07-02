@@ -1,6 +1,7 @@
 import { PokemonService } from './../../../services/pokemon.service';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Pokemon } from 'src/app/interfaces/pokemon';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class MainComponent {
   searchValue: String = '';
   _serviceSubscription!: Subscription;
+  chosenPokemon!: Pokemon;
   pokemonOffset: number = 0;
   pokemonLimit: number = 4;
   pokemonList: any[] = [];
@@ -49,6 +51,10 @@ export class MainComponent {
         },
         error: (e) => console.error(e),
       });
+  }
+
+  public selectedPokemon(selectedPokemon: Pokemon) {
+    this.chosenPokemon = selectedPokemon;
   }
 
   ngOnDestroy(): void {

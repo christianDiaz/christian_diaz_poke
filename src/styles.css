@@ -2,11 +2,10 @@ html,
 body {
   background-color: #fbfbfb;
   height: max-content;
-  font-family: 'CustomFont', Arial, sans-serif;
+  font-family: "CustomFont", Arial, sans-serif;
 }
 
 .mainContainer {
-  /* background-color: gray; */
   height: 96vh;
 }
 
@@ -55,7 +54,7 @@ body {
 }
 
 .pokemonList {
-  width: 50%;
+  width: 52%;
 }
 
 .pokemonCards {
@@ -72,7 +71,19 @@ body {
 }
 
 .pokemonShow {
-  width: 49%;
+  width: 47%;
+}
+
+.pokemonDetails {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.pokemonDetail {
+  width: 75%;
 }
 
 .buttonContainer {

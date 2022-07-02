@@ -1,0 +1,39 @@
+<div class="detail">
+  <div class="detailImage">
+    <img
+      class="detailPhoto"
+      src="{{ pokemon.photo }}"
+      alt="{{ pokemon.name }}"
+    />
+  </div>
+
+  <div class="detailNumber">
+    {{ "#" + pokemon.id }}
+  </div>
+
+  <div class="detailName">
+    {{ pokemon.name | titlecase }}
+  </div>
+
+  <div class="detailText">
+    <h3>Types</h3>
+    {{ pokemon.pokemonTypes }}
+  </div>
+
+  <div class="detailText">
+    <h3>Weigth</h3>
+    {{ pokemon.weight + " Kg" }}
+  </div>
+
+  <div class="detailText">
+    <h3>Sprites</h3>
+    <ng-container *ngFor="let sprite of pokemon.sprites">
+      <img class="imgSprite" src="{{ sprite }}" alt="" />
+    </ng-container>
+  </div>
+
+  <div class="detailText">
+    <h3>Moves</h3>
+    {{ pokemon.moves }}
+  </div>
+</div>

@@ -16,12 +16,22 @@
       <div class="pokemonCards">
         <p class="pokeCard" *ngFor="let pokemon of pokemonList">
           <app-pokemon-simple-view
-            pokemonUrl="{{ pokemon.url }}"
+            [pokemonUrl]="pokemon.url"
+            (selectedPokemon)="selectedPokemon($event)"
           ></app-pokemon-simple-view>
         </p>
       </div>
     </div>
-    <div class="pokemonShow cardsContainer">child 2</div>
+    <div class="pokemonShow cardsContainer">
+      <div class="pokemonDetails">
+        <p class="pokemonDetail">
+          <app-pokemon-detail-view
+            *ngIf="chosenPokemon"
+            [selectedPokemon]="chosenPokemon"
+          ></app-pokemon-detail-view>
+        </p>
+      </div>
+    </div>
   </div>
   <div class="buttonContainer">
     <button class="btnPagination" (click)="onClickPrevPage()">Atras</button>

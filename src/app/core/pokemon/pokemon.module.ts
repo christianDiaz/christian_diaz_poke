@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonRoutingModule } from './pokemon-routing.module';
 import { MainComponent } from './main/main.component';
 import { PokemonSimpleViewComponent } from './pokemon-simple-view/pokemon-simple-view.component';
+import { PokemonDetailViewComponent } from './pokemon-detail-view/pokemon-detail-view.component';
 
 
 
@@ -12,7 +13,8 @@ import { PokemonSimpleViewComponent } from './pokemon-simple-view/pokemon-simple
 @NgModule({
   declarations: [
     MainComponent,
-    PokemonSimpleViewComponent
+    PokemonSimpleViewComponent,
+    PokemonDetailViewComponent
   ],
   imports: [
     CommonModule,
