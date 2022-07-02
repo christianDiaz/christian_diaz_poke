@@ -11,7 +11,7 @@ export class MainComponent {
   _serviceSubscription!: Subscription;
   pokemonOffset: number = 0;
   pokemonLimit: number = 4;
-  pokemonList: Array<any> = [];
+  pokemonList: any[] = [];
   constructor(private pokemonService: PokemonService) {
     this.getPokemonList();
   }
@@ -44,19 +44,11 @@ export class MainComponent {
     this._serviceSubscription = this.pokemonService
       .getPokemonPaged(this.pokemonOffset, this.pokemonLimit)
       .subscribe({
-        next: (r) => (this.pokemonList = r.body.results),
+        next: (r) => {
+          this.pokemonList = r.body.results;
+        },
         error: (e) => console.error(e),
       });
-  }
-
-  getRandomColor() {
-    let color = '#';
-    let letters = '0123456789ABCDEF';
-    color = '#'; // <-----------
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
   }
 
   ngOnDestroy(): void {

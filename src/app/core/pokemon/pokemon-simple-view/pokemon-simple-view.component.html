@@ -1,1 +1,18 @@
-<p>pokemon-simple-view works!</p>
+<div
+  *ngIf="pokemon"
+  class="pokeContainer"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+  (click)="onClickPokemonCard(pokemon)"
+>
+  <div class="cardImage">
+    <img class="pokemonPhoto" src="{{ pokemon.photo }}" alt="{{pokemon.name}}" />
+  </div>
+
+  <div class="cardNumber">
+    {{ '#'+pokemon.id }}
+  </div>
+
+  <div class="cardName">
+    {{ pokemon.name | titlecase }}
+  </div>
+</div>

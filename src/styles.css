@@ -2,6 +2,7 @@ html,
 body {
   background-color: #fbfbfb;
   height: max-content;
+  font-family: 'CustomFont', Arial, sans-serif;
 }
 
 .mainContainer {
@@ -16,13 +17,13 @@ body {
 
 .titleContainer {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .searchContainer {
   display: flex;
-  margin: 20px 0;
-  width: 59%;
+  margin: 15px 0;
+  width: 50%;
 }
 
 .searchBox {
@@ -38,7 +39,7 @@ body {
 
 .searchBox:hover,
 .searchBox:focus {
-  border: 2px solid #000000;
+  border: 1px solid #000000;
 }
 
 .previewContainer {
@@ -54,7 +55,7 @@ body {
 }
 
 .pokemonList {
-  width: 54%;
+  width: 50%;
 }
 
 .pokemonCards {
@@ -67,21 +68,17 @@ body {
 
 .pokeCard {
   width: 45%;
-  border: 2px solid burlywood;
-  background-color: lightblue;
   text-align: center;
-
 }
 
 .pokemonShow {
-  width: 44%;
+  width: 49%;
 }
 
 .buttonContainer {
   margin: 20px 10px;
   display: flex;
-  width: 58%;
-  /* border: 2px solid burlywood; */
+  width: 49%;
   justify-content: space-between;
 }
 

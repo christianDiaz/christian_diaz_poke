@@ -13,7 +13,18 @@ export class PokemonService {
   constructor(private httpClient: HttpClient) {}
 
   getPokemon(pokemon: String): Observable<HttpResponse<any>> {
-    return this.httpClient.get<HttpResponse<any>>(`${this.URL_SERVICE}/${pokemon}`, {
+    return this.httpClient.get<HttpResponse<any>>(
+      `${this.URL_SERVICE}/${pokemon}`,
+      {
+        observe: 'response',
+      }
+    );
+  }
+
+  getPokemonData(urlPokemon: String): Observable<HttpResponse<any>> {
+    // console.log(urlPokemon);
+
+    return this.httpClient.get<HttpResponse<any>>(`${urlPokemon}`, {
       observe: 'response',
     });
   }

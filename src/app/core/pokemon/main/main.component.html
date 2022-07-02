@@ -14,8 +14,10 @@
   <div class="previewContainer">
     <div class="pokemonList cardsContainer">
       <div class="pokemonCards">
-        <p class="pokeCard" ng-style="background-color: ${getRandoColor()}  " *ngFor="let pokemon of pokemonList">
-          {{ pokemon.name }}
+        <p class="pokeCard" *ngFor="let pokemon of pokemonList">
+          <app-pokemon-simple-view
+            pokemonUrl="{{ pokemon.url }}"
+          ></app-pokemon-simple-view>
         </p>
       </div>
     </div>
