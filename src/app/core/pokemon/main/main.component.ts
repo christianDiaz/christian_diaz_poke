@@ -11,34 +11,52 @@ export class MainComponent {
   _serviceSubscription!: Subscription;
   pokemonOffset: number = 0;
   pokemonLimit: number = 4;
+  pokemonList: Array<any> = [];
   constructor(private pokemonService: PokemonService) {
-    console.log(this.pokemonOffset);
-
+    this.getPokemonList();
   }
 
-  onKeyUp() {
-    this.getPokemon();
+  onKeyUpSearch() {
+    this.getPokemon(this.searchValue);
   }
 
   onClickNextPage() {
     this.pokemonOffset = this.pokemonOffset + 4;
-    console.log(this.pokemonOffset);
-
+    this.getPokemonList();
   }
 
   onClickPrevPage() {
     this.pokemonOffset = this.pokemonOffset <= 4 ? 0 : this.pokemonOffset - 4;
-    console.log(this.pokemonOffset);
+    this.getPokemonList();
   }
 
-  getPokemon() {
+  getPokemon(pokemonName: String) {
     this._serviceSubscription = this.pokemonService
-      .getPokemon('pikachu')
+      .getPokemon(pokemonName)
       .subscribe({
-        next: (r) => console.log(r.body),
+        next: (r) => console.log(r.body.results),
         error: (e) => console.log,
         complete: console.info,
       });
+  }
+
+  getPokemonList() {
+    this._serviceSubscription = this.pokemonService
+      .getPokemonPaged(this.pokemonOffset, this.pokemonLimit)
+      .subscribe({
+        next: (r) => (this.pokemonList = r.body.results),
+        error: (e) => console.error(e),
+      });
+  }
+
+  getRandomColor() {
+    let color = '#';
+    let letters = '0123456789ABCDEF';
+    color = '#'; // <-----------
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 
   ngOnDestroy(): void {

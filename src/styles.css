@@ -51,15 +51,30 @@ body {
   border: 2px solid blueviolet;
   display: flex;
   height: 70vh;
-  flex-flow: wrap;
 }
 
 .pokemonList {
-  width: 59%;
+  width: 54%;
 }
 
-.pokemonCard {
-  width: 39%;
+.pokemonCards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.pokeCard {
+  width: 45%;
+  border: 2px solid burlywood;
+  background-color: lightblue;
+  text-align: center;
+
+}
+
+.pokemonShow {
+  width: 44%;
 }
 
 .buttonContainer {

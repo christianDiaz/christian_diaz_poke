@@ -3,11 +3,23 @@
     <h2>Listado de Pokemon</h2>
   </div>
   <div class="searchContainer">
-    <input (keyup)="onKeyUp()" [(ngModel)]="searchValue"  type="text" class="searchBox" placeholder="&#xf002; Buscar" />
+    <input
+      (keyup)="onKeyUpSearch()"
+      [(ngModel)]="searchValue"
+      type="text"
+      class="searchBox"
+      placeholder="&#xf002; Buscar"
+    />
   </div>
   <div class="previewContainer">
-    <div class="pokemonList cardsContainer">child 1</div>
-    <div class="pokemonCard cardsContainer">child 2</div>
+    <div class="pokemonList cardsContainer">
+      <div class="pokemonCards">
+        <p class="pokeCard" ng-style="background-color: ${getRandoColor()}  " *ngFor="let pokemon of pokemonList">
+          {{ pokemon.name }}
+        </p>
+      </div>
+    </div>
+    <div class="pokemonShow cardsContainer">child 2</div>
   </div>
   <div class="buttonContainer">
     <button class="btnPagination" (click)="onClickPrevPage()">Atras</button>
