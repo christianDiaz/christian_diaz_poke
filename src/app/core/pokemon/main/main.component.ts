@@ -2,6 +2,7 @@ import { PokemonService } from './../../../services/pokemon.service';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Pokemon } from 'src/app/interfaces/pokemon';
+import { toPokemon } from '../../../interfaces/pokemon';
 
 @Component({
   selector: 'app-main',
@@ -10,16 +11,23 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 export class MainComponent {
   searchValue: String = '';
   _serviceSubscription!: Subscription;
-  chosenPokemon!: Pokemon;
+  chosenPokemon?: Pokemon;
   pokemonOffset: number = 0;
   pokemonLimit: number = 4;
   pokemonList: any[] = [];
-  constructor(private pokemonService: PokemonService) {
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
     this.getPokemonList();
   }
 
   onKeyUpSearch() {
-    this.getPokemon(this.searchValue);
+    if (this.searchValue.trim().length === 0) {
+      this.getPokemonList();
+    } else {
+      this.pokemonList = [];
+      this.getPokemon(this.searchValue);
+    }
   }
 
   onClickNextPage() {
@@ -36,8 +44,8 @@ export class MainComponent {
     this._serviceSubscription = this.pokemonService
       .getPokemon(pokemonName)
       .subscribe({
-        next: (r) => console.log(r.body.results),
-        error: (e) => console.log,
+        next: (r) => (this.chosenPokemon = toPokemon(r.body)),
+        error: (e) => ( this.chosenPokemon  = undefined   ),
         complete: console.info,
       });
   }

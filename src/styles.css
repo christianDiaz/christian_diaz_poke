@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: #fbfbfb;
+  background-color: #ebeaeaed;
   height: max-content;
   font-family: "CustomFont", Arial, sans-serif;
 }
@@ -48,7 +48,6 @@ body {
 }
 
 .cardsContainer {
-  border: 2px solid blueviolet;
   display: flex;
   height: 70vh;
 }
@@ -83,7 +82,7 @@ body {
 }
 
 .pokemonDetail {
-  width: 75%;
+  width: 90%;
 }
 
 .buttonContainer {

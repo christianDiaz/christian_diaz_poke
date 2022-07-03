@@ -13,7 +13,7 @@
   </div>
   <div class="previewContainer">
     <div class="pokemonList cardsContainer">
-      <div class="pokemonCards">
+      <div class="pokemonCards"*ngIf="pokemonList.length > 0">
         <p class="pokeCard" *ngFor="let pokemon of pokemonList">
           <app-pokemon-simple-view
             [pokemonUrl]="pokemon.url"
@@ -33,7 +33,7 @@
       </div>
     </div>
   </div>
-  <div class="buttonContainer">
+  <div class="buttonContainer" *ngIf="pokemonList.length > 0">
     <button class="btnPagination" (click)="onClickPrevPage()">Atras</button>
     <button class="btnPagination" (click)="onClickNextPage()">Siguiente</button>
   </div>

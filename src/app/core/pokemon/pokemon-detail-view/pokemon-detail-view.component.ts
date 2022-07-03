@@ -13,7 +13,6 @@ export class PokemonDetailViewComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.selectedPokemon);
     this.pokemon = this.selectedPokemon;
   }
 }
