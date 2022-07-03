@@ -25,7 +25,6 @@ export class MainComponent {
     if (this.searchValue.trim().length === 0) {
       this.getPokemonList();
     } else {
-      this.pokemonList = [];
       this.getPokemon(this.searchValue);
     }
   }
@@ -45,7 +44,7 @@ export class MainComponent {
       .getPokemon(pokemonName)
       .subscribe({
         next: (r) => (this.chosenPokemon = toPokemon(r.body)),
-        error: (e) => ( this.chosenPokemon  = undefined   ),
+        error: (e) => (this.chosenPokemon = undefined),
         complete: console.info,
       });
   }

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from '../../../interfaces/pokemon';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Pokemon, toPokemon } from '../../../interfaces/pokemon';
 
 @Component({
   selector: 'app-pokemon-detail-view',
@@ -14,5 +14,9 @@ export class PokemonDetailViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemon = this.selectedPokemon;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.pokemon = changes['selectedPokemon'].currentValue;
   }
 }
