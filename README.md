@@ -12,7 +12,11 @@ To build the app run `ng build`, the artifacts wil generate in directiry `dist/`
 
 ## Running unit tests
 
-To run test execute `ng test` to execute the unit tests via JEST [`https://jestjs.io/`]
+To run test execute `ng test` to execute the unit tests via JEST [`https://jestjs.io/`] 
+
+## Get coverage report
+
+After executing test you can have code covergae html page in `coverage/christian_diaz_poke/index.html` file.
 
 ## Developed by
 

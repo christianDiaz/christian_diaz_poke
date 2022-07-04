@@ -9,7 +9,7 @@ import { toPokemon } from '../../../interfaces/pokemon';
   templateUrl: './main.component.html',
 })
 export class MainComponent {
-  searchValue: String = '';
+  searchValue: string = '';
   _serviceSubscription!: Subscription;
   chosenPokemon?: Pokemon;
   pokemonOffset: number = 0;
@@ -39,7 +39,7 @@ export class MainComponent {
     this.getPokemonList();
   }
 
-  getPokemon(pokemonName: String) {
+  getPokemon(pokemonName: string) {
     this._serviceSubscription = this.pokemonService
       .getPokemon(pokemonName)
       .subscribe({

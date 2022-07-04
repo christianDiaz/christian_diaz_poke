@@ -1,0 +1,33 @@
+{
+  "id": 658,
+  "name": "greninja",
+  "moves": [
+    "pound",          "ice-punch",    "cut",          "growl",
+    "hydro-pump",     "surf",         "ice-beam",     "blizzard",
+    "hyper-beam",     "low-kick",     "strength",     "dig",
+    "toxic",          "quick-attack", "double-team",  "smokescreen",
+    "haze",           "lick",         "waterfall",    "bubble",
+    "rest",           "rock-slide",   "substitute",   "thief",
+    "snore",          "spite",        "protect",      "feint-attack",
+    "spikes",         "icy-wind",     "swagger",      "attract",
+    "sleep-talk",     "return",       "frustration",  "hidden-power",
+    "rain-dance",     "rock-smash",   "facade",       "taunt",
+    "role-play",      "snatch",       "secret-power", "dive",
+    "hydro-cannon",   "rock-tomb",    "extrasensory", "aerial-ace",
+    "bounce",         "water-pulse",  "u-turn",       "fling",
+    "dark-pulse",     "night-slash",  "giga-impact",  "shadow-sneak",
+    "gunk-shot",      "grass-knot",   "smack-down",   "round",
+    "echoed-voice",   "scald",        "acrobatics",   "water-pledge",
+    "work-up",        "mat-block",    "confide",      "water-shuriken",
+    "power-up-punch", "brutal-swing"
+  ],
+  "sprites": [
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/658.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/658.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/658.png"
+  ],
+  "pokemonTypes": [ "water", "dark" ],
+  "weight": 400,
+  "photo": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/658.png"
+}

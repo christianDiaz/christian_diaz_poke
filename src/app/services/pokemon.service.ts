@@ -12,7 +12,7 @@ export class PokemonService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPokemon(pokemon: String): Observable<HttpResponse<any>> {
+  getPokemon(pokemon: string): Observable<HttpResponse<any>> {
     return this.httpClient.get<HttpResponse<any>>(
       `${this.URL_SERVICE}/${pokemon}`,
       {
@@ -21,9 +21,7 @@ export class PokemonService {
     );
   }
 
-  getPokemonData(urlPokemon: String): Observable<HttpResponse<any>> {
-    // console.log(urlPokemon);
-
+  getPokemonData(urlPokemon: string): Observable<HttpResponse<any>> {
     return this.httpClient.get<HttpResponse<any>>(`${urlPokemon}`, {
       observe: 'response',
     });
