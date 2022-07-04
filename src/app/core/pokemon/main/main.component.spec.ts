@@ -2,7 +2,7 @@ import { PokemonDetailViewComponent } from './../pokemon-detail-view/pokemon-det
 import { MainComponent } from './main.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PokemonService } from '../../../services/pokemon.service';
-import { HttpClientModule, HttpResponse } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import castedPokemonData from '../../../mocks/data/pokemon.json';
 import { Pokemon } from '../../../interfaces/pokemon';

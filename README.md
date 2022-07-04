@@ -4,7 +4,7 @@ This project is running angular application builded wiht angular version 14.0.4.
 
 ## Local server
 
-For a loca Server run `ng serve` and the navigate in browser to `http://localhost:4200`.
+For a local dev server run `ng serve` and then navigate to browser in `http://localhost:4200` url.
 
 ## Build
 
@@ -12,7 +12,7 @@ To build the app run `ng build`, the artifacts wil generate in directiry `dist/`
 
 ## Running unit tests
 
-To run test execute `ng test` to execute the unit tests via JEST [`https://jestjs.io/`] 
+To run test execute `ng test` to execute the unit tests via JEST [`https://jestjs.io/`] and get code coverage.
 
 ## Get coverage report
 
